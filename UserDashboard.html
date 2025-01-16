@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap" rel="stylesheet">
+        
+    <link rel='stylesheet' type='text/css' media='screen' href='css/Dashboards.css'>
+    <title>User Dashboard</title>
+</head>
+<script>
+if (localStorage.getItem('id') === null)
+    {
+        alert("Please log in first !");
+        window.location.href="/login.html";
+    }
+</script>
+<body class="Dashboard-body">
+    <nav class="navbar">
+        <img src="logo.jpg" alt="" srcset="">
+        <h2 class="nav-heading">User Dashboard</h2>
+        <button class="logout-btn">&#10227;&nbsp;&nbsp;Logout</button>
+    </nav>
+    <div class="AdminDashboard userDashboard">
+        <div class="con">
+            <!-- <div class="col adminInfo">
+                <h3>Admin Information</h3>
+                <div class="information">
+                    <p id="admin_name">admin Name</p>
+                    <p id="admin_email">email</p>
+                    <p id="admin_phone">phone</p>
+                </div>
+            </div> -->
+            <div class="col colUser  userInfo">
+                <h3>User Information</h3>
+                <div class="information">
+                    <p id="username">user Name</p>
+                    <p id="email">email</p>
+                    <p id="phone">phone</p>
+                </div>
+            </div>
+            <div class="col colUser">
+                <h3>To do Task tasks</h3>
+                <div class=" col1 ToDoTasks">
+                    
+                    <form class="form" id="myForm4">
+                        
+                    </form>
+                </div>
+            </div>
+            <div class="col colUser">
+                <h3>Completed Tasks</h3>
+                <div class=" col1 UserCompletedTasks">
+                    
+                </div>
+            </div>
+            <div class="col colUser">
+                <h3>Time</h3>
+                <form class="form" id="myForm4">
+                <div>
+                <h1 id="time"></h1>
+                </div>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script src='js/ShowUserTask.js'></script>
+    <script src='js/userDashboard.js'></script>
+    <script src='js/logout.js'></script>
+</body>
+</html>

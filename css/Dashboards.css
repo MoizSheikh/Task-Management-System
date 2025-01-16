@@ -1,0 +1,280 @@
+*{
+    font-family: 'Nunito', sans-serif;
+}
+.Dashboard-body{
+    background-image: linear-gradient(to bottom right, rgb(96, 96, 255) ,rgb(122, 2, 122) , rgb(253, 159, 175));
+    min-height: 100vh;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, .15);
+    border-radius: 6px;
+    color: white; 
+}
+.navbar img{
+    width: 120px;
+    border-radius: 6px;
+    margin: 5px 0;
+    margin-left: -8%; 
+}
+.logout-btn{
+    padding: 0.6rem 1.7rem;
+    border-radius: 6px;
+    border: none;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, .45); 
+    margin-right: -10%; 
+}
+.nav-heading{
+    font-size: 28px;
+}
+#member_email > option{
+    padding: 1rem;
+    background-color: white;
+}
+
+.userDashboard col{
+ width: 24%;
+}
+.con{
+    display: flex;
+    flex-wrap: wrap;
+    width : 100%;
+    justify-content: space-between;
+}
+.col{
+    height: max-content;
+    min-height: 40px;
+    background-color: rgb(241, 241, 241);
+    margin: 0;
+    margin-top: 20px;
+    padding: 0.3rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-self:stretch;
+    width: 19%;
+}
+
+.colUser{
+width: 24%;
+}
+.col p{
+    margin: 4px;
+}
+.col > h3{
+    font-size: 26px;
+    margin: 0;
+    text-align: center;
+}
+.information{
+    background-color: white;
+    /* padding: 1rem 3rem 1rem 1rem; */
+    border-radius: 5px;
+    margin: 8px;
+    font-size: 18px;
+    text-align: center;
+}
+.allTask > div, .UnAssignedTasks > div, .AssignedTasks > div, .CompletedTasks > div, .ToDoTasks > div, .UserCompletedTasks > div{
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 3px;
+    margin: 8px;
+    font-size: 14px;
+    word-wrap: normal
+}
+.start-btn, .assignMemberBtn , .startBtn, .assign-member{
+    padding: 0.6rem 1.5rem;
+    background-color: rgb(158, 75, 236);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 11%;
+}
+
+.startBtn{
+    margin: 10px 32% !important;
+}
+.removeMemberBtn{
+    padding: 0.6rem 1.5rem;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 11%;
+}
+#myForm3{
+    width: 100%;
+}
+#myModal, #myModal1{
+    background-color: rgb(241, 241, 241);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    position: fixed;
+    left: 20%;
+    top: 20%;
+    width: 60%;
+    height: 60%;
+    z-index: 1;
+    text-align: center;
+    display: none;
+}
+#myModal{
+    display: flex;
+}
+#myModal1{
+    width: 60%;
+    height: 60%;
+    overflow-y: scroll;
+}
+.field-wrap{
+    margin-right: -18%;
+}
+.close, .close1 {
+    color: #aaaaaa;
+    float: right;
+    margin-right: -15%;
+    font-size: 28px;
+    font-weight: bolder;
+}
+.close:hover, .close:focus, .close1:hover, .close1:focus, #member_email:focus{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#assignUserEmails{
+    flex-direction: column;
+}
+#member_email, .newSelect{
+    background-color: white;
+    padding: 0.5rem 3rem;
+    margin-bottom: 10px;    
+    border: none;
+    font-size: 18px;
+    color: gray;
+    text-align: left;
+}
+#overlay{
+    /* display: none; */
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, .7) !important;
+}
+
+.eachCard span{
+    font-weight: 600;
+}
+
+.nameHeading{
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.otherHeading{
+    font-size: 17px;
+    font-weight: 600;
+
+}
+@media(max-width: 1250px){
+    #myModal, #myModal1{
+        width: 85%;
+        height: 80%;
+        left: 10%;
+        top: 10%;
+    }
+    .close, .close1{
+        margin-right: 15%;
+    }
+    .field-wrap{
+        margin-left: 0%;
+    }
+    .col{
+        width: 31%;
+    }
+}
+@media(max-width: 940px){
+    .input, .newSelect{
+        width: 200px;
+        padding: 0.3rem 2rem;
+    }
+    #member_email, .newSelect{
+        width: 260px;
+    }
+    .col{
+        width: 47%;
+    }
+    #myForm3, #myForm4{
+        margin-left: 5%;
+        width: 84%;
+    }
+    .logout-btn{
+        margin-right: 0;
+    }
+    .navbar img{
+        margin-left: 0; 
+    }
+}
+@media(max-width: 580px){
+    #member_email, .input, .newSelect{
+        width: 180px;
+        padding: 0.3rem 0rem;
+    }
+    .col{
+        width: 90%;
+    }
+    .con{
+        justify-content: center;
+    }
+    .logout-btn{
+        padding: 0.6rem 1rem;
+    }
+    .navbar img{
+        width: 100px;
+        margin-right: 5%;
+    }
+    .nav-heading{
+        font-size: 22px;
+    }
+}
+@media(max-width: 370px){
+    .col{
+        width: 95%;
+    }
+    .logout-btn{
+        margin-right: 0%;
+        padding: 0.6rem 1rem;
+    }
+    .nav-heading{
+        font-size: 22px;
+    }
+    #myForm3, #myForm4{
+        width: 75%;
+    }
+    .logout-btn{
+        padding: 0.6rem 0.5rem;
+    }
+    .navbar img{
+        width: 90px;
+        height: 60px;
+    }
+    .nav-heading{
+        font-size: 20px;
+    }
+}

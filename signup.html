@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap" rel="stylesheet">
+    
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+    <script src='js/signup.js'></script>
+</head>
+<body class="signupBody">
+    <img src="logo.jpg" alt="" srcset="">
+    <div class="formpage-body">
+    <div class="form1">
+
+        <ul class="tab-group">
+            <li onclick="location.href = 'signup.html';" class="tab" id="highlight2">Sign Up</li>
+            <li onclick="location.href = 'index.html';" class="tab" id="tab1">Log In</li>
+        </ul>
+        
+        <div class="login">
+          <div class="loginCon">   
+            <form class="form" id="myForm">
+                <h1>Sign Up</h1>
+                <div class="field-wrap" id="user">
+                    <Label>Username:</Label>
+                    <input type="text" name="username" class="input" id="username" placeholder="Username">
+                </div>
+                <div class="field-wrap">
+                    <Label>Password:</Label>
+                    <input type="password" name="password" class="input" id="password" placeholder="Password">
+                </div>
+                <div class="field-wrap">
+                    <Label>Confirm Password:</Label>
+                    <input type="password" name="password2" class="input" id="password2" placeholder="Confirm Password">
+                </div>
+                <div class="field-wrap">
+                    <Label>Email:</Label>
+                    <input type="email" name="email" class="input" id="email" placeholder="Email">
+                </div>
+                <div class="field-wrap">
+                    <Label>Phone:</Label>
+                    <input type="text" name="mobile_no" class="input" id="mobile_no" placeholder="Phone">
+                </div>
+                <div id="status">User&nbsp;&nbsp;&nbsp;</div>
+                <label class="switch" >
+                    <input type="checkbox" id="myCheck" onclick="adminCheck()">
+                    <span class="slider round"></span>
+                </label><br><br>
+                <button type="submit" id="form-button">Signup</button><br>
+            </form>
+        </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

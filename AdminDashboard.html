@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/Dashboards.css'>
+    <title>Admin Dashboard</title>
+</head>
+<script>
+   let is_admin=localStorage.getItem("is_admin");
+   console.log(is_admin); 
+    if (localStorage.getItem('id') === null)
+    {
+        alert("Please log in first !");
+        window.location.href="/login.html";
+    }
+    if(is_admin==="true")
+    {
+       console.log("Admin is here :)")
+    }
+    else
+    {
+        alert("Please log in first !");
+        window.location.href="/login.html";   
+
+    }
+   
+    
+     
+</script>
+<body class="Dashboard-body">
+    <nav class="navbar">
+        <img src="logo.jpg" alt="" srcset="">
+        <h2 class="nav-heading">Admin Dashboard</h2>
+        <button class="logout-btn" id="logout-btn">&#10227;&nbsp;&nbsp;Logout</button>
+    </nav>
+    <div class="AdminDashboard">
+        <div class="con">
+            <div class="col adminInfo">
+                <h3>Admin Information</h3>
+                <div class="information">
+                    <p id="username">admin Name</p>
+                    <p id="email">email</p>
+                    <p id="phone">phone</p>
+                </div>
+                <br/>
+                <h3>Add Project</h3>
+                <button class="start-btn" id="myBtn">New Project</button>
+                <div id="overlay"></div>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <form class="form" id="myForm3">
+                            <h1 style="text-align: center;">New Project</h1>
+                            <div class="field-wrap">
+                                <Label>Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Label>
+                                <input type="text" name="task_name" class="input" id="task_name" placeholder="Name">
+                            </div>
+                            <div class="field-wrap">
+                                <Label>Description:</Label>
+                                <input type="text" name="task_desc" class="input" id="task_desc" placeholder="Description">
+                            </div>
+                            <div class="field-wrap">
+                                <Label>Start Date:&nbsp;&nbsp;</Label>
+                                <input type="date" name="task_desc" class="input" id="start_date_project" placeholder="Start Date">
+                            </div>
+                            <div class="field-wrap">
+                                <Label>End Date:&nbsp;&nbsp;&nbsp;&nbsp;</Label>
+                                <input type="date" name="task_desc" class="input" id="end_date_project" placeholder="End Date">
+                            </div>
+                            <!-- <div class="field-wrap">
+                                <Label>Number of Members:</Label>
+                                <input type="number" name="total_members" id="total_members" placeholder="Members">
+                            </div>
+                            <div class="field-wrap">
+                                <Label>Cost per hour:</Label>
+                                <input type="number" name="cost_per_hour" id="cost_per_hour" placeholder="Cost per Hour">
+                            </div> -->
+                            <button class="start-btn" type="submit">Add Task</button>
+                        </form>
+                    </div>
+                </div> 
+            </div>
+            <div class="col">
+                <h3>All tasks</h3>
+                <div class=" col1 allTask completedTaskCard">
+                    
+                </div>
+            </div>
+            <div class="col">
+                <h3>Add Members</h3>
+                <div class=" col1 UnAssignedTasks">
+                </div>
+                <div id="myModal1" class="modal1">
+                    <div class="modal-content">
+                        <span class="close1">&times;</span>
+                        <form class="form" id="myForm4">
+                            <h1 style="text-align: center;">Assign Members</h1>
+                            <div class="field-wrap">
+                                <Label>Cost per hour ($):</Label>
+                                <input type="number" name="cost_per_hour" class="input" id="cost_per_hour" placeholder="Cost per Hour">
+                            </div>
+                            <div class="field-wrap" id="assignUserEmails">
+                                <Label>User Email:</Label>
+                                 <select id="member_email" name="member_email" >
+                                    <option selected="true" disabled="disabled">Choose Email</option>
+                                </select> 
+                            </div>
+
+                            <button class="assign-member" id="assign-btn" type="submit">Assign Member</button>
+                        </form>
+                    </div>
+                </div> 
+            </div>
+            <div class="col">
+                <h3>Assigned Members</h3>
+                <div class=" col1 AssignedTasks">
+                   
+                </div>
+            </div>
+            <div class="col">
+                <h3>Completed Tasks</h3>
+                <div class=" col1 CompletedTasks">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div id="overlay"></div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form class="form" id="myForm3">
+                <h1 style="text-align: center;">New Task</h1>
+                <div class="field-wrap">
+                    <Label>Task Name:</Label>
+                    <input type="text" name="task_name" id="task_name" placeholder="Name">
+                </div>
+                <div class="field-wrap">
+                    <Label>Task Description:</Label>
+                    <input type="text" name="task_desc" id="task_desc" placeholder="Description">
+                </div>
+                <div class="field-wrap">
+                    <Label>Number of Members:</Label>
+                    <input type="number" name="total_members" id="total_members" placeholder="Members">
+                </div>
+                <div class="field-wrap">
+                    <Label>Cost per hour:</Label>
+                    <input type="number" name="cost_per_hour" id="cost_per_hour" placeholder="Cost per Hour">
+                </div>
+                <button class="start-btn" type="submit">Add Task</button>
+            </form>
+        </div>
+    </div>  -->
+    <script src='js/AddTask.js'></script>
+    <script src='js/ShowTask.js'></script>
+    <script src='js/userDashboard.js'></script>
+    <script src='js/logout.js'></script>
+</body>
+</html>
